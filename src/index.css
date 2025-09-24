@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Modern minimalist farm theme */
+    --background: 0 0% 98%;
+    --foreground: 210 20% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 8%;
+
+    --primary: 159 60% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 14% 95%;
+    --secondary-foreground: 210 20% 15%;
+
+    --muted: 210 14% 94%;
+    --muted-foreground: 210 10% 50%;
+
+    --accent: 159 40% 92%;
+    --accent-foreground: 159 60% 25%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 14% 89%;
+    --input: 210 14% 89%;
+    --ring: 159 60% 36%;
+
+    --radius: 0.875rem;
+
+    /* Semantic colors - farm themed */
+    --success: 159 60% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 43 96% 56%;
+    --warning-foreground: 26 83% 14%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+    --error: 0 72% 51%;
+    --error-foreground: 0 0% 98%;
+
+    /* Farm-specific semantic colors */
+    --farm-primary: 159 60% 36%;       /* Modern sage green */
+    --farm-primary-light: 159 50% 45%;
+    --farm-secondary: 43 96% 56%;      /* Golden yellow */
+    --farm-secondary-light: 48 100% 67%;
+    --farm-accent: 217 91% 60%;        /* Sky blue */
+    --farm-accent-light: 217 81% 70%;
+    --farm-success: 142 76% 36%;       /* Fresh green */
+    --farm-success-light: 142 66% 46%;
+    --farm-warning: 25 95% 53%;        /* Warm orange */
+    --farm-warning-light: 25 85% 63%;
+    --farm-error: 0 72% 51%;           /* Clean red */
+    --farm-error-light: 0 62% 61%;
+    --farm-purple: 269 75% 50%;        /* Purple for actions */
+    --farm-purple-light: 269 65% 60%;
+
+    /* Page-specific themes - Pastel and harmonic colors */
+    /* Expenses Page - Soft Red Theme */
+    --expenses-primary: 0 45% 85%;     /* Very light pastel red */
+    --expenses-secondary: 3 50% 75%;   /* Soft rose */
+    --expenses-accent: 8 60% 70%;      /* Warm coral */
+    --expenses-bg: 355 40% 96%;        /* Ultra light pink background */
+    --expenses-border: 358 25% 85%;    /* Subtle pink border */
+    --expenses-hover: 2 55% 80%;       /* Gentle hover state */
+
+    /* Profits Page - Soft Green Theme */
+    --profits-primary: 120 40% 85%;    /* Very light mint green */
+    --profits-secondary: 110 45% 75%;  /* Soft sage */
+    --profits-accent: 105 50% 70%;     /* Fresh mint */
+    --profits-bg: 115 35% 96%;         /* Ultra light green background */
+    --profits-border: 118 30% 85%;     /* Subtle green border */
+    --profits-hover: 112 45% 80%;      /* Gentle hover state */
+
+    /* Production Page - Soft Blue Theme */
+    --production-primary: 210 40% 85%;   /* Very light sky blue */
+    --production-secondary: 200 45% 75%; /* Soft powder blue */
+    --production-accent: 195 50% 70%;    /* Fresh azure */
+    --production-bg: 205 35% 96%;        /* Ultra light blue background */
+    --production-border: 208 30% 85%;    /* Subtle blue border */
+    --production-hover: 202 45% 80%;     /* Gentle hover state */
+
+    /* Vacas Page - Soft Purple Theme */
+    --vacas-primary: 260 40% 85%;       /* Very light lavender */
+    --vacas-secondary: 250 45% 75%;     /* Soft lilac */
+    --vacas-accent: 245 50% 70%;        /* Fresh amethyst */
+    --vacas-bg: 255 35% 96%;            /* Ultra light purple background */
+    --vacas-border: 258 30% 85%;        /* Subtle purple border */
+    --vacas-hover: 252 45% 80%;         /* Gentle hover state */
+
+    /* Historico Page - Soft Orange Theme */
+    --historico-primary: 30 50% 85%;     /* Very light peach */
+    --historico-secondary: 25 55% 75%;   /* Soft apricot */
+    --historico-accent: 20 60% 70%;      /* Fresh orange */
+    --historico-bg: 35 40% 96%;          /* Ultra light orange background */
+    --historico-border: 32 35% 85%;      /* Subtle orange border */
+    --historico-hover: 27 50% 80%;       /* Gentle hover state */
+
+    /* Home Page - Multi-color gradients */
+    --home-gradient-1: linear-gradient(135deg, hsl(120 40% 85%), hsl(110 45% 75%));
+    --home-gradient-2: linear-gradient(135deg, hsl(0 45% 85%), hsl(3 50% 75%));
+    --home-gradient-3: linear-gradient(135deg, hsl(217 50% 85%), hsl(225 55% 75%));
+    --home-gradient-4: linear-gradient(135deg, hsl(269 45% 85%), hsl(275 50% 75%));
+
+    /* Modern gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--farm-primary)), hsl(var(--farm-primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--farm-secondary)), hsl(var(--farm-secondary-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--farm-accent)), hsl(var(--farm-accent-light)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--farm-success)), hsl(var(--farm-success-light)));
+    --gradient-warning: linear-gradient(135deg, hsl(var(--farm-warning)), hsl(var(--farm-warning-light)));
+    --gradient-error: linear-gradient(135deg, hsl(var(--farm-error)), hsl(var(--farm-error-light)));
+    --gradient-purple: linear-gradient(135deg, hsl(var(--farm-purple)), hsl(var(--farm-purple-light)));
+    
+    /* Page-specific gradients */
+    --gradient-expenses: linear-gradient(135deg, hsl(var(--expenses-primary)), hsl(var(--expenses-secondary)));
+    --gradient-expenses-hover: linear-gradient(135deg, hsl(var(--expenses-hover)), hsl(var(--expenses-accent)));
+    --gradient-profits: linear-gradient(135deg, hsl(var(--profits-primary)), hsl(var(--profits-secondary)));
+    --gradient-profits-hover: linear-gradient(135deg, hsl(var(--profits-hover)), hsl(var(--profits-accent)));
+    --gradient-production: linear-gradient(135deg, hsl(var(--production-primary)), hsl(var(--production-secondary)));
+    --gradient-production-hover: linear-gradient(135deg, hsl(var(--production-hover)), hsl(var(--production-accent)));
+    --gradient-vacas: linear-gradient(135deg, hsl(var(--vacas-primary)), hsl(var(--vacas-secondary)));
+    --gradient-vacas-hover: linear-gradient(135deg, hsl(var(--vacas-hover)), hsl(var(--vacas-accent)));
+    --gradient-historico: linear-gradient(135deg, hsl(var(--historico-primary)), hsl(var(--historico-secondary)));
+    --gradient-historico-hover: linear-gradient(135deg, hsl(var(--historico-hover)), hsl(var(--historico-accent)));
+    
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 14% 97%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 98%), hsl(210 14% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(210 14% 96%));
+
+    /* Modern shadows */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.08);
+    --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.08);
+    --shadow-xl: 0 20px 40px -8px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 20% 8%;
+    --sidebar-primary: 159 60% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 159 40% 92%;
+    --sidebar-accent-foreground: 159 60% 25%;
+    --sidebar-border: 210 14% 89%;
+    --sidebar-ring: 159 60% 36%;
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Mobile responsive utilities */
+    --mobile-padding: 1rem;
+    --mobile-gap: 0.75rem;
+    --mobile-card-min-height: 100px;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  /* Mobile responsive table scrolling */
+  .table-container {
+    @apply w-full overflow-x-auto;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .table-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .table-container::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+
+  /* Mobile chart containers with better responsive handling */
+  .chart-container {
+    @apply w-full;
+    min-width: 100%;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .chart-container canvas {
+      min-width: 280px !important;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .chart-container canvas {
+      min-width: 400px !important;
+    }
+  }
+}
